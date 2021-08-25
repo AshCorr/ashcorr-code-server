@@ -2,7 +2,7 @@ FROM codercom/code-server:3.11.1
 
 RUN sudo apt-get update
 
-RUN sudo apt-get install \
+RUN sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
