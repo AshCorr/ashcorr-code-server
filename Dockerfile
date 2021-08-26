@@ -8,8 +8,8 @@ RUN sudo apt-get install -y \
     curl \
     lsb-release
 
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /usr/share/keyrings/docker-archive-keyring.gpg
-RUN curl -fsSL https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo tee /usr/share/keyrings/adoptopenjdk-archive-keyring.gpg
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg --output /usr/share/keyrings/docker-archive-keyring.gpg
+RUN curl -fsSL https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public --output /usr/share/keyrings/adoptopenjdk-archive-keyring.gpg
 
 RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 RUN echo "deb [signed-by=/usr/share/keyrings/adoptopenjdk-archive-keyring.gpg] https://adoptopenjdk.jfrog.io/adoptopenjdk/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
