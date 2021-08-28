@@ -7,7 +7,8 @@ RUN sudo apt-get install -y \
     ca-certificates \
     gnupg \
     curl \
-    lsb-release
+    lsb-release \
+    unzip
 
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 RUN curl -fsSL https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo gpg --dearmor -o /usr/share/keyrings/adoptopenjdk-archive-keyring.gpg
@@ -18,5 +19,12 @@ RUN echo "deb [signed-by=/usr/share/keyrings/adoptopenjdk-archive-keyring.gpg] h
 RUN sudo apt-get update
 
 RUN sudo apt-get -y install docker-ce docker-ce-cli containerd.io adoptopenjdk-11-hotspot maven
+
+RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byond.zip
+    && unzip byond.zip
+    && cd byond
+    && make install
+    && cd ..
+    && rm -rf byond.zip byond
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
