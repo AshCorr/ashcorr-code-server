@@ -21,7 +21,8 @@ RUN sudo apt-get update
 
 RUN sudo apt-get -y install docker-ce docker-ce-cli containerd.io adoptopenjdk-11-hotspot maven
 
-RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byond.zip \
+RUN cd /tmp/ \
+        && curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byond.zip \
         && unzip byond.zip \
         && cd byond \
         && make install \
