@@ -24,6 +24,7 @@ RUN sudo apt-get -y install docker-ce docker-ce-cli containerd.io adoptopenjdk-1
 RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byond.zip \
         && unzip byond.zip \
         && cd byond \
+        && mkdir -p /usr/share/man/man6
         && sudo make install \
         && cd .. \
         && rm -rf byond.zip byond
