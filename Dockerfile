@@ -29,4 +29,6 @@ RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byo
         && cd .. \
         && rm -rf byond.zip byond
 
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
