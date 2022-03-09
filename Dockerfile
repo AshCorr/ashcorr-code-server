@@ -20,7 +20,7 @@ RUN sudo apt-get install -y \
     libxss1 \
     libasound2 \
     libxtst6 \
-    xauth\
+    xauth \
     xvfb
 
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -40,7 +40,5 @@ RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byo
         && sudo make install \
         && cd .. \
         && rm -rf byond.zip byond
-
-apt-get install 
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
