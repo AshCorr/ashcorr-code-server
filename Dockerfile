@@ -21,7 +21,8 @@ RUN sudo apt-get install -y \
     libasound2 \
     libxtst6 \
     xauth \
-    xvfb
+    xvfb \
+    libssl-dev
 
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 RUN curl -fsSL https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo gpg --dearmor -o /usr/share/keyrings/adoptopenjdk-archive-keyring.gpg
