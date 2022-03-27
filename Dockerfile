@@ -22,7 +22,8 @@ RUN sudo apt-get install -y \
     libxtst6 \
     xauth \
     xvfb \
-    libssl-dev
+    libssl-dev \
+    libpq-dev
 
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
