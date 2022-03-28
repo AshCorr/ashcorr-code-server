@@ -45,6 +45,6 @@ RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byo
         && cd .. \
         && rm -rf byond.zip byond
 
-RUN curl https://downloads.yugabyte.com/get_clients.sh | sh && sudo mv yugabyte-client-2.6/bin/ysqlsh /usr/local/bin/ && sudo mv yugabyte-client-2.6/bin/ycqlsh /usr/local/bin/
+RUN curl https://downloads.yugabyte.com/get_clients.sh | sh && sudo mv yugabyte-client-2.6/postgress/bin/ysqlsh /usr/local/bin/ && sudo mv yugabyte-client-2.6/bin/ycqlsh /usr/local/bin/
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
