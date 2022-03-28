@@ -44,7 +44,9 @@ RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byo
         && sudo make install \
         && cd .. \
         && rm -rf byond.zip byond
+        
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-RUN curl https://downloads.yugabyte.com/get_clients.sh | sh && sudo mv yugabyte-client-2.6/postgres/bin/ysqlsh /usr/local/bin/ && sudo mv yugabyte-client-2.6/bin/ycqlsh /usr/local/bin/
+RUN brew tap yugabyte/yugabytedb && brew install yugabytedb-client
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
