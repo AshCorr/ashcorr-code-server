@@ -48,6 +48,4 @@ RUN curl http://www.byond.com/download/build/514/514.1564_byond_linux.zip -o byo
         
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-RUN brew tap yugabyte/yugabytedb && brew install yugabytedb-client
-
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
