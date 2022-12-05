@@ -1,4 +1,4 @@
-FROM codercom/code-server:4.8.3
+FROM codercom/code-server:4.9.0-rc.4
 
 RUN sudo apt-get update
 
