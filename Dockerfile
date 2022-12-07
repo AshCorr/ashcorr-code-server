@@ -1,4 +1,4 @@
-FROM codercom/code-server:v4.9.0
+FROM ghcr.io/coder/code-server:4.9.0
 RUN sudo apt-get update
 
 RUN sudo apt-get install -y \
