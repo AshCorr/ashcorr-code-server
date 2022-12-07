@@ -1,5 +1,4 @@
-FROM codercom/code-server:4.9.0-rc.4
-
+FROM codercom/code-server:v4.9.0
 RUN sudo apt-get update
 
 RUN sudo apt-get install -y \
