@@ -19,7 +19,7 @@ RUN sudo apt-get install -y \
     libxss1 \
     libasound2 \
     libxtst6 \
-    libc \
+    gcc \
     xauth \
     xvfb \
     libssl-dev \
